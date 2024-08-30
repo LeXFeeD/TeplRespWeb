@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Атмосфера Тепла - Категории</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="x-icon" src="/img/IconSite.png"/>
+    <link rel="shortcut icon" type="x-icon" href="/img/IconSite.png"/>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <a href="index.html" class="logo"><i class='bx bxs-sun'></i>Атмосфера Тепла</a>
+
+        <ul class="navlist">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="#categories" class="active">Категории</a></li>
+            <li><a href="index.html#contact">Контакты</a></li>
+        </ul>
+        
+        <div class="nav-icons">
+            <!-- <a href="#"><i class='bx bx-search'></i></a> -->
+            <!-- <a href="#"><i class='bx bx-cart'></i></a> -->
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+
+    <!-- categories -->
+    <section class="categories" id="categories">
+        <div class="middle-text">
+            <h4>Категории товаров</h4>
+            <h2>Изучите наши категории</h2>
+        </div>
+        <div class="categories-content">
+            <div class="category" onclick="toggleCategory('boilers')">
+                <h3>Котлы</h3>
+                <div class="subcategory" id="boilers" style="display: none;">
+                    <div class="subcategory-item" onclick="showProducts('floor')">
+                        <h4>Напольные</h4>
+                    </div>
+                    <div class="subcategory-item" onclick="showProducts('wall')">
+                        <h4>Настенные</h4>
+                    </div>
+                    <div class="subcategory-item" onclick="showProducts('electric')">
+                        <h4>Электрические</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="category" onclick="toggleCategory('radiators')">
+                <h3>Радиаторы</h3>
+                <div class="subcategory" id="radiators" style="display: none;">
+                    <div class="subcategory-item" onclick="showProducts('NRZ')">
+                        <h4>НРЗ</h4>
+                    </div>
+                    <div class="subcategory-item" onclick="showProducts('aqua')">
+                        <h4>AQUAPROM</h4>
+                    </div>
+                    <div class="subcategory-item" onclick="showProducts('rom')">
+                        <h4>ROMMER</h4>
+                    </div>
+                    <div class="subcategory-item" onclick="showProducts('royal')">
+                        <h4>Royal Thermo</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="category" onclick="toggleCategory('tanks')">
+                <h3>Мембранные баки</h3>
+                <div class="subcategory" id="tanks" style="display: none;">
+                    <div class="subcategory-item" onclick="showProducts('gvs')">
+                        <h4>Для ГВС и гелиосистем</h4>
+                    </div>
+                    <div class="subcategory-item" onclick="showProducts('water_supply')">
+                        <h4>Для водоснабжения</h4>
+                    </div>
+                    <div class="subcategory-item" onclick="showProducts('heat_supply')">
+                        <h4>Для отопления</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category" onclick="showProducts('poliprop')">
+                <h3>Полипропилен</h3>
+                
+            </div>
+
+            <div class="category" onclick="showProducts('kanaliz')">
+                <h3>Канализация</h3>
+                
+            </div>
+
+            <div class="category" onclick="showProducts('nasos')">
+                <h3>Насосы</h3>
+                
+            </div>
+        </div>
+        <div class="products" id="products">
+            <!-- Здесь будут отображаться товары -->
+        </div>
+    </section>
+
+    <!-- scroll top -->
+    <a href="#" class="scroll">
+        <i class='bx bx-up-arrow-alt'></i>
+    </a>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- link to js -->
+    <script src="js/script.js"></script>
+
+    <script>
+        function toggleCategory(id) {
+            var element = document.getElementById(id);
+            element.style.display = element.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function showProducts(category) {
+            var products = {
+                'floor': [
+                    {name: 'Котел напольный FERROLI Torino 12,5', img: 'img/FERROLI Torino 12,5.png', oldPrice: '38000₽', newPrice: '35509,00₽'}
+                    /*{name: 'Напольный котёл 2', img: 'img/p2.png', oldPrice: '22000₽', newPrice: '20000₽'},
+                    {name: 'Напольный котёл 3', img: 'img/p3.png', oldPrice: '22000₽', newPrice: '20000₽'}*/
+                ],
+                'wall': [
+                    {name: 'Котел газовый настенный Federica Bugatti 24 VARME 2-x конт. с дисп.', img: 'img/Federica Bugatti 24 VARME.png', oldPrice: '60000₽', newPrice: '56663,00₽'},
+                    {name: 'Котел газовый настенный Federica Bugatti 32 VARME 2-x конт. с дисп.', img: 'img/Federica Bugatti 24 VARME.png', oldPrice: '80000₽', newPrice: '73557,00₽'},
+                    {name: 'Котел газовый настенный Federica Bugatti 32B VARME 1 конт. с дисп.', img: 'img/Federica Bugatti 24 VARME.png', oldPrice: '70000₽', newPrice: '68616,00₽'},
+                    {name: 'Котел настенный газовый Навьен Deluxe S24K', img: 'img/Deluxe S24K.png', oldPrice: '55000₽', newPrice: '49669,00₽'},
+                    {name: 'Настенный газовый котел NAVIEN DELUX - 13K COAXIAL', img: 'img/NAVIEN DELUX 13K COAXIAL.png', oldPrice: '60999₽', newPrice: '49254,00₽'},
+                    {name: 'Котел газовый VITOPEND 100-W A1HB001 U-rlu 24 кВт Viessmann', img: 'img/Viesmann Vitopend 100-W.png', oldPrice: '70500₽', newPrice: '68500,00₽'},
+                    {name: 'Котел настенный FERROLI Divabel 24 F', img: 'img/DIVABEL-F.png', oldPrice: '70000₽', newPrice: '65500,00₽'},
+                    {name: 'Котел настенный FERROLI Vitabel F24', img: 'img/Vitabel F24.png', oldPrice: '50999₽', newPrice: '45975,00₽'},
+                    {name: 'Котел газовый VITOPEND 100-W A1JB K-rlu 24 кВт Viessmann', img: 'img/VITOPEND 100-W A1JB.png', oldPrice: '71000₽', newPrice: '69500,00₽'},
+                    {name: 'Котел газовый VITOPEND 100-W A1JB K-rlu 30 кВт Viessmann', img: 'img/VITOPEND 100-W A1JB.png', oldPrice: '85000₽', newPrice: '82500,00₽'}
+                ],
+                'electric': [
+                    {name: 'Электрокотел Ferroli TOR 9.0 кВт', img: 'img/Ferroli TOR.png', oldPrice: '60000₽', newPrice: '49198,00₽'},
+                    {name: 'Электрокотел STELSUN ЭВПМ-6 кВт (220В)', img: 'img/STELSUN ЭВПМ-6.png', oldPrice: '10000₽', newPrice: '7140,00₽'}
+                ],
+                'NRZ': [
+                    {name: 'Радиатор алюмин. НРЗ 500/100', img: 'img/НРЗ 500.png', oldPrice: '1000₽', newPrice: '720,00₽ (за 1 секцию)'},
+                    {name: 'Радиатор алюмин. НРЗ 350/100', img: 'img/НРЗ 350.png', oldPrice: '1000₽', newPrice: '700,00₽ (за 1 секцию)'}
+                ],
+                'aqua': [
+                    {name: 'Радиатор алюмин. AQUAPROM 350/80', img: 'img/AQUAPROM 350.png', oldPrice: '700₽', newPrice: '528,00₽ (за 1 секцию)'},
+                    {name: 'Радиатор алюмин. AQUAPROM 500/96', img: 'img/AQUAPROM 500.png', oldPrice: '1000₽', newPrice: '564,00₽ (за 1 секцию)'}
+                ],
+                'rom': [
+                    {name: 'Радиатор ROMMER Plus 200/100 алюмин. (RAL9016)', img: 'img/ROMMER Plus 200.png', oldPrice: '700₽', newPrice: '580,00₽ (за 1 секцию)'},
+                    {name: 'Радиатор ROMMER Profi 350 (AI 350-80) алюмин. (RAL9016)', img: 'img/ROMMER Profi 350.png', oldPrice: '900₽', newPrice: '640,00₽ (за 1 секцию)'},
+                    {name: 'Радиатор ROMMER Plus 500/100 алюмин. (RAL9016)', img: 'img/ROMMER Plus 500.png', oldPrice: '800₽', newPrice: '600,00₽ (за 1 секцию)'}
+                ],
+                'royal': [
+                    {name: 'Радиатор Royal Thermo Indigo 500 2.0', img: 'img/Royal Thermo Indigo 500.png', oldPrice: '1200₽', newPrice: '900,00₽ (за 1 секцию)'},
+                    {name: 'Радиатор Royal Thermo PianoForte 500 new/Noir Sable', img: 'img/Royal Thermo PianoForte.png', oldPrice: '2000₽', newPrice: '1278,00₽ (за 1 секцию)'},
+                    {name: 'Радиатор Royal Thermo Revolution 350', img: 'img/Royal Thermo Revolution 350.png', oldPrice: '1000₽', newPrice: '780,00₽ (за 1 секцию)'},
+                    {name: 'Радиатор Royal Thermo Revolution 500', img: 'img/Royal Thermo Revolution 350.png', oldPrice: '1200₽', newPrice: '823,00₽ (за 1 секцию)'}
+                ],
+                'gvs': [
+                    {name: 'Бак мембранный для ГВС и гелиосистем Wester Premium 24л.', img: 'img/Wester Premium 24.png', oldPrice: '5299₽', newPrice: '3980,00₽'}
+                ],
+                'water_supply': [
+                    {name: 'Бак мембранный для водоснабжения ДЖИЛЕКС ХИТ 24л.', img: 'img/ДЖИЛЕКС ХИТ.png', oldPrice: '3500₽', newPrice: '2532,00₽'},
+                    {name: 'Бак мембранный для водоснабжения ДЖИЛЕКС ХИТ 50л.', img: 'img/ДЖИЛЕКС ХИТ.png', oldPrice: '5000₽', newPrice: '4041,00₽'},
+                    {name: 'Бак мембранный для водоснабжения горизонтальный VIEIR 50л.', img: 'img/VIEIR 50.png', oldPrice: '6000₽', newPrice: '4398,00₽'}
+                ],
+                'heat_supply': [
+                    {name: 'Бак мембранный для отопления VIEIR 36л.', img: 'img/VIEIR 36.png', oldPrice: '4800₽', newPrice: '3986,00₽'},
+                    {name: 'Бак мембранный для отопления Wester 12л.', img: 'img/Wester 12.png', oldPrice: '3700₽', newPrice: '2400,00₽'},
+                    {name: 'Бак мембранный для отопления VIEIR 50л.', img: 'img/VIEIR 36.png', oldPrice: '5000₽', newPrice: '4229,00₽'}
+                ],
+                'poliprop': [
+                    {name: 'Трубы', img: 'img/poliprop Trubi.png', oldPrice: '15₽', newPrice: 'от 7₽'},
+                    {name: 'Фитинги', img: 'img/poliprop Fitingi.png', oldPrice: '15₽', newPrice: 'от 7₽'}
+                ],
+                'kanaliz': [
+                    {name: 'Трубы', img: 'img/kanaliz Truba.png', oldPrice: '30₽', newPrice: 'от 10₽'},
+                    {name: 'Фасонина', img: 'img/kanaliz fasonina.png', oldPrice: '30₽', newPrice: 'от 10₽'}
+                ],
+                'nasos': [
+                    {name: 'Grundfos', img: 'img/Grundfos.png', oldPrice: '15000₽', newPrice: '13500₽'},
+                    {name: 'ZOX', img: 'img/ZOX.png', oldPrice: '5000₽', newPrice: 'от 3000₽'},
+                    {name: 'Federica Bugatti', img: 'img/Federica Nasos.png', oldPrice: '10000₽', newPrice: '7200₽'}
+                ]
+            };
+
+            var container = document.getElementById('products');
+            container.innerHTML = '';
+
+            if (products[category]) {
+                products[category].forEach(function (product) {
+                    var productDiv = document.createElement('div');
+                    productDiv.className = 'product';
+
+                    var img = document.createElement('img');
+                    img.src = product.img;
+                    productDiv.appendChild(img);
+
+                    var name = document.createElement('h3');
+                    name.innerText = product.name;
+                    productDiv.appendChild(name);
+
+                    var price = document.createElement('div');
+                    price.className = 'price';
+
+                    var oldPrice = document.createElement('h6');
+                    oldPrice.innerText = product.oldPrice;
+                    oldPrice.style.textDecoration = 'line-through';
+                    oldPrice.style.color = 'var(--main-color)';
+                    oldPrice.style.fontFamily = 'TimesNewRoman';
+                    oldPrice.style.fontSize = '18px';
+                    price.appendChild(oldPrice);
+
+                    var newPrice = document.createElement('h6');
+                    newPrice.innerText = product.newPrice;
+                    price.appendChild(newPrice);
+
+                    productDiv.appendChild(price);
+                    container.appendChild(productDiv);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
