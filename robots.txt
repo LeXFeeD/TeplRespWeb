@@ -1,2 +1,3 @@
 User-agent: *
 Disallow:
+Sitemap: https://atmosfera-tepla.onrender.com/sitemap.xml
